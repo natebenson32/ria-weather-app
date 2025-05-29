@@ -33,8 +33,8 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <!-- City navbar -->
           <div>
-            <div class="flex flex-row">
-              <div class="flex-1 grid grid-cols-1 sm:hidden pr-4">
+            <div class="flex flex-row sm:hidden">
+              <div class="flex-1 grid grid-cols-1 pr-4">
                 <select
                   aria-label="Select a tab"
                   class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-2 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
