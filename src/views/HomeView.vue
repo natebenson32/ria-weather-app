@@ -5,12 +5,12 @@
         <div
           class="relative flex h-16 items-center justify-between lg:border-b lg:border-gray-400/25"
         >
-          <div class="flex items-center px-2 lg:px-0">
+          <div class="hidden lg:flex items-center px-2 lg:px-0">
             <div class="shrink-0">
               <div class="text-white text-xl font-medium">Ria Weather App</div>
             </div>
           </div>
-          <div class="flex flex-1 justify-center px-2 lg:ml-6 lg:justify-end">
+          <div class="flex flex-1 justify-center lg:ml-6 lg:justify-end">
             <!-- Search bar -->
             <div class="grid w-full max-w-lg grid-cols-1 lg:max-w-xs">
               <input
@@ -26,7 +26,6 @@
               />
             </div>
           </div>
-          <div class="hidden lg:ml-4 lg:block"></div>
         </div>
       </div>
       <header class="py-8">
