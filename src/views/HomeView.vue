@@ -100,7 +100,7 @@ const citySelected = (index: number) => {
   tabs.value.forEach((tab, i) => {
     tab.current = i === index
   })
-  // fetchWeather(tabs.value[index].lat, tabs.value[index].lon)
-  // console.log(`Selected city: ${tabs.value[index].name}`)
+  fetchWeather(tabs.value[index].lat, tabs.value[index].lon)
+  console.log(`Selected city: ${tabs.value[index].name}`)
 }
 </script>
