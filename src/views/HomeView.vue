@@ -74,9 +74,48 @@
     </div>
 
     <main class="-mt-32">
-      <div class="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-        <div class="rounded-lg bg-white px-5 py-6 shadow-sm sm:px-6">
-          <div class="h-72">Test Content</div>
+      <div class="mx-auto max-w-7xl px-4 pb-6 sm:px-6 lg:px-8">
+        <div class="flex flex-col rounded-lg bg-white shadow-sm overflow-hidden">
+          <div
+            class="flex h-14 px-5 sm:px-6 text-xl leading-14 font-medium text-gray-950 border-b-1 border-gray-200"
+          >
+            Next Hours
+          </div>
+          <div class="h-64 px-5 py-6 sm:px-6">
+            <div class="flex items-center justify-center h-full">
+              <div v-if="loading" class="text-gray-500">Loading...</div>
+              <div v-if="error" class="text-red-500">{{ error }}</div>
+              <!-- <div v-if="!loading && !error">
+                <ul>
+                  <li v-for="hour in weatherData.hourly" :key="hour.dt">
+                    {{ new Date(hour.dt * 1000).toLocaleTimeString() }}: {{ hour.temp }}°C
+                  </li>
+                </ul>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mx-auto max-w-7xl px-4 pb-6 sm:px-6 lg:px-8">
+        <div class="flex flex-col rounded-lg bg-white shadow-sm overflow-hidden">
+          <div
+            class="flex h-14 px-5 sm:px-6 text-xl leading-14 font-medium text-gray-950 border-b-1 border-gray-200"
+          >
+            Next 5 Days
+          </div>
+          <div class="h-64 px-5 py-6 sm:px-6">
+            <div class="flex items-center justify-center h-full">
+              <div v-if="loading" class="text-gray-500">Loading...</div>
+              <div v-if="error" class="text-red-500">{{ error }}</div>
+              <!-- <div v-if="!loading && !error">
+                <ul>
+                  <li v-for="hour in weatherData.hourly" :key="hour.dt">
+                    {{ new Date(hour.dt * 1000).toLocaleTimeString() }}: {{ hour.temp }}°C
+                  </li>
+                </ul>
+              </div> -->
+            </div>
+          </div>
         </div>
       </div>
     </main>
