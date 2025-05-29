@@ -108,16 +108,29 @@
             Next Hours
           </div>
           <div class="h-64 px-5 py-6 sm:px-6">
-            <div class="flex items-center justify-center h-full">
-              <div v-if="loading" class="text-gray-500">Loading...</div>
-              <div v-if="error" class="text-red-500">{{ error }}</div>
-              <!-- <div v-if="!loading && !error">
-                <ul>
-                  <li v-for="hour in weatherData.hourly" :key="hour.dt">
-                    {{ new Date(hour.dt * 1000).toLocaleTimeString() }}: {{ hour.temp }}°C
+            <div class="overflow-x-auto w-full">
+              <!-- <div v-if="loading" class="text-gray-500">Loading...</div> -->
+              <!-- <div v-if="error" class="text-red-500">{{ error }}</div> -->
+              <div v-if="!loading" class="flex w-full">
+                <ul class="flex min-w-max space-x-2">
+                  <li
+                    v-for="hour in 12"
+                    :key="hour"
+                    class="flex flex-col min-w-32 mx-1 my-auto py-6 text-center bg-gray-100 rounded-lg"
+                  >
+                    <div class="font-medium text-2xl text-gray-900">67°F</div>
+                    <div class="font-medium text-slate-500">0%</div>
+                    <img
+                      src="https://openweathermap.org/img/wn/01d@2x.png"
+                      alt="Weather Icon"
+                      class="w-16 h-16 mx-auto"
+                    />
+                    <div class="font-medium text-lg text-gray-900">3:00PM</div>
+                    <!-- {{ hour.weather[0].description }} - {{ hour.temp }}°C -->
+                    <!-- {{ new Date(hour.dt * 1000).toLocaleTimeString() }}: {{ hour.temp }}°C -->
                   </li>
                 </ul>
-              </div> -->
+              </div>
             </div>
           </div>
         </div>
@@ -130,17 +143,29 @@
           >
             Next 5 Days
           </div>
-          <div class="h-64 px-5 py-6 sm:px-6">
-            <div class="flex items-center justify-center h-full">
-              <div v-if="loading" class="text-gray-500">Loading...</div>
-              <div v-if="error" class="text-red-500">{{ error }}</div>
-              <!-- <div v-if="!loading && !error">
-                <ul>
-                  <li v-for="hour in weatherData.hourly" :key="hour.dt">
-                    {{ new Date(hour.dt * 1000).toLocaleTimeString() }}: {{ hour.temp }}°C
+          <div class="h-64">
+            <div class="overflow-auto h-full">
+              <!-- <div v-if="loading" class="text-gray-500">Loading...</div> -->
+              <!-- <div v-if="error" class="text-red-500">{{ error }}</div> -->
+              <div v-if="!loading" class="flex w-full h-full">
+                <ul class="flex flex-1 flex-col divide-y divide-gray-200 h-full">
+                  <li v-for="hour in 5" :key="hour" class="flex flex-1 py-6 text-center">
+                    <div class="flex mx-auto">
+                      <img
+                        src="https://openweathermap.org/img/wn/01d@2x.png"
+                        alt="Weather Icon"
+                        class="w-16 h-16"
+                      />
+                      <div class="flex flex-col my-auto mx-2 mr-6">
+                        <div class="font-medium text-xl text-gray-900">Thu, May 29</div>
+                        <div class="text-gray-500">Clear throughout the day.</div>
+                      </div>
+                      <div class="font-medium text-xl text-gray-900 my-auto mr-2">67°</div>
+                      <div class="font-medium text-xl text-gray-900 my-auto">53°</div>
+                    </div>
                   </li>
                 </ul>
-              </div> -->
+              </div>
             </div>
           </div>
         </div>
