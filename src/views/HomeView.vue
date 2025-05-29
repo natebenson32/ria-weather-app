@@ -31,7 +31,6 @@
       </div>
       <header class="py-8">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <!-- <h1 class="text-3xl font-bold tracking-tight text-white">Los Angeles, CA</h1> -->
           <!-- City navbar -->
           <div>
             <div class="grid grid-cols-1 sm:hidden">
@@ -49,7 +48,7 @@
                 aria-hidden="true"
               />
             </div>
-            <div class="hidden sm:block">
+            <div class="hidden sm:flex sm:items-center sm:justify-between">
               <nav class="flex space-x-4" aria-label="Tabs">
                 <button
                   v-for="(tab, index) in tabs"
@@ -67,6 +66,18 @@
                   {{ tab.name }}
                 </button>
               </nav>
+              <button
+                class="bg-gray-700 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium hover:cursor-pointer"
+                @click="
+                  fetchWeather(
+                    tabs.find((tab) => tab.current)!.lat,
+                    tabs.find((tab) => tab.current)!.lon
+                  )
+                "
+              >
+                <ArrowPathIcon class="inline-block h-5 w-5 mr-1 -mt-1" aria-hidden="true" />
+                Refresh Data
+              </button>
             </div>
           </div>
         </div>
@@ -74,6 +85,7 @@
     </div>
 
     <main class="-mt-32">
+      <!-- "Next Hours" Box -->
       <div class="mx-auto max-w-7xl px-4 pb-6 sm:px-6 lg:px-8">
         <div class="flex flex-col rounded-lg bg-white shadow-sm overflow-hidden">
           <div
@@ -96,6 +108,7 @@
           </div>
         </div>
       </div>
+      <!-- "Next 5 Days" Box -->
       <div class="mx-auto max-w-7xl px-4 pb-6 sm:px-6 lg:px-8">
         <div class="flex flex-col rounded-lg bg-white shadow-sm overflow-hidden">
           <div
@@ -124,7 +137,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
+import { ArrowPathIcon, ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
 import { useWeather } from '../composables/weatherAPI.js'
 
 const { weatherData, loading, error, fetchWeather } = useWeather()
