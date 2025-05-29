@@ -98,9 +98,11 @@
       </header>
     </div>
 
-    <main class="-mt-32">
+    <main
+      class="-mt-32 mx-auto max-w-7xl grid grid-cols-1 xl:grid-cols-3 gap-4 px-4 pb-6 sm:px-6 lg:px-8"
+    >
       <!-- "Next Hours" Box -->
-      <div class="mx-auto max-w-7xl px-4 pb-6 sm:px-6 lg:px-8">
+      <div class="xl:col-span-2">
         <div class="flex flex-col rounded-lg bg-white shadow-sm overflow-hidden">
           <div
             class="flex h-14 px-5 sm:px-6 text-xl leading-14 font-medium text-gray-950 border-b-1 border-gray-200"
@@ -136,7 +138,7 @@
         </div>
       </div>
       <!-- "Next 5 Days" Box -->
-      <div class="mx-auto max-w-7xl px-4 pb-6 sm:px-6 lg:px-8">
+      <div class="">
         <div class="flex flex-col rounded-lg bg-white shadow-sm overflow-hidden">
           <div
             class="flex h-14 px-5 sm:px-6 text-xl leading-14 font-medium text-gray-950 border-b-1 border-gray-200"
@@ -152,7 +154,7 @@
                   <li v-for="hour in 5" :key="hour" class="flex flex-1 py-6 text-center">
                     <div class="flex mx-auto">
                       <img
-                        src="https://openweathermap.org/img/wn/01d@2x.png"
+                        src="https://openweathermap.org/img/wn/02d@2x.png"
                         alt="Weather Icon"
                         class="w-16 h-16"
                       />
